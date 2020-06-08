@@ -67,8 +67,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-# MyLocations1ReactRouteLocalStorage
-MyLocations1ReactRouteLocalStorage myLocations allows the user to maintain a list of categorized name locations. The domain model contains two main entities: a Category and a Location. A Category has a single property: Name. A Location has the following properties: Name, Address, Coordinates, and Category. All data is saved to the locale storage of the browser (an HTML5 feature) for simplicity. It also uses StateDataManager using React Context Provider and Consumer (createContext, useState, useContext, useEffect hooks). The application uses the react-router module.
+# MyLocations
+
+MyLocations myLocations allows the user to maintain a list of categorized name locations. The domain model contains two main entities: a Category and a Location. A Category has a single property: Name. A Location has the following properties: Name, Address, Coordinates, and Category. All data is saved to the locale storage of the browser (an HTML5 feature) for simplicity. It also uses StateDataManager using React Context Provider and Consumer (createContext, useState, useContext, useEffect hooks). The application uses the react-router module.
 
 Use babel and webpack to support es2015 style jsx syntax and module loading.
 
