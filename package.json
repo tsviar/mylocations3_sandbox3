@@ -1,7 +1,7 @@
 {
-  "name": "mylocations333_sandbox",
+  "name": "mylocations333-sandbox",
   "version": "1.0.2",
-  "description": "An application for managing favorite locations  and categories, using GoogleMaps, local storage, context managers, React hooks and router and material-ui , styled-components, css-grid, flexbox, elazy loading with ErrorBoundary, etc...",
+  "description": "n application for managing favorite locations  and categories, using GoogleMaps, local storage, context managers, React hooks and router and ",
   "main": "src/index.js",
   "homepage": "/",
   "author": "Tsvia-Hellen Rubin",
@@ -18,7 +18,6 @@
     "@types/markerclustererplus": "2.1.33",
     "babel-eslint": "^10.1.0",
     "dotenv": "8.2.0",
-
     "material-colors": "1.2.6",
     "material-table": "1.57.2",
     "react": "^16.12.0",
@@ -45,7 +44,12 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

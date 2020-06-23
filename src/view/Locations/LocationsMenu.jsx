@@ -1,8 +1,8 @@
-import React, { forwardRef, } from "react";
+import React, { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import main_palete_theme from '../../style.lib/PalleteStyles';
-import { palette, spacing } from '@material-ui/system';
+import main_palete_theme from "../../style.lib/PalleteStyles";
+import { palette, spacing } from "@material-ui/system";
 //import AddLocationRoundedIcon from '@material-ui/icons/AddLocationRounded';
 
 import {
@@ -21,7 +21,7 @@ import {
   // Clear,
   DeleteOutline,
   Edit,
-  Info,
+  Info
   // FilterList,
   // FirstPage,
   // LastPage,
@@ -29,42 +29,48 @@ import {
   // SaveAlt,
   // Search,
   // ViewColumn,
-} from '@material-ui/icons/';
-
-
+} from "@material-ui/icons/";
 
 const LocationsMenu = () => {
-
   return (
     <Nav>
       <NavLi>
         <StyledLink to="/locations">
-          <IconDiv><Info style={MenuIconStyle} /></IconDiv> <TextDiv>View</TextDiv>
+          <IconDiv>
+            <Info style={MenuIconStyle} />
+          </IconDiv>{" "}
+          <TextDiv>View</TextDiv>
         </StyledLink>
       </NavLi>
       <NavLi>
         <StyledLink to="/locations/add">
-          <IconDiv><AddLocationSharp style={MenuIconStyle} /></IconDiv><TextDiv>Add</TextDiv>
+          <IconDiv>
+            <AddLocationSharp style={MenuIconStyle} />
+          </IconDiv>
+          <TextDiv>Add</TextDiv>
         </StyledLink>
       </NavLi>
       <NavLi>
         <StyledLink to="/locations/edit">
-          <IconDiv><Edit style={MenuIconStyle} /></IconDiv> <TextDiv>Edit</TextDiv>
+          <IconDiv>
+            <Edit style={MenuIconStyle} />
+          </IconDiv>{" "}
+          <TextDiv>Edit</TextDiv>
         </StyledLink>
       </NavLi>
       <NavLi>
         <StyledLink to="/locations/remove">
-          <IconDiv><DeleteOutline style={MenuIconStyle} /></IconDiv> <TextDiv>Remove</TextDiv>
+          <IconDiv>
+            <DeleteOutline style={MenuIconStyle} />
+          </IconDiv>{" "}
+          <TextDiv>Remove</TextDiv>
         </StyledLink>
       </NavLi>
-
     </Nav>
   );
-}
+};
 
 export default LocationsMenu;
-
-
 
 const Nav = styled.ul`
   /* ${spacing}  */
@@ -97,8 +103,8 @@ const Nav = styled.ul`
   /* font-family: "Yanone Kaffeesatz"; */
   /* font-family: "Expletus Sans"; */
 
-  height: inherit;
-  /* height: 50px; */
+  /* height: inherit; */
+  height: 50px;
   width: inherit;
 
   margin: auto;
@@ -127,8 +133,7 @@ const Nav = styled.ul`
 `;
 
 const NavLi = styled.li`
- height: inherit;
- 
+  height: inherit;
 `;
 
 //Extending React Link
@@ -177,49 +182,45 @@ const StyledLink = styled(Link)`
 `;
 
 const IconDiv = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
 
   height: inherit;
-
 `;
 
 const MenuIconStyle = {
   fontSize: "1.6rem",
-  lineHeight: '1.8rem',
-
+  lineHeight: "1.8rem"
 };
 
 const TextDiv = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
 
-    
   font-family: "Expletus Sans";
   /* font-family: "Yanone Kaffeesatz";  */
   /* font-family: "Griffy", cursive; */
-  
-/* 
+
+  /* 
   font-size: 1.2rem;
   line-height: 1.2rem; */
   font-size: 1.5rem;
-  line-height:1.8rem; 
+  line-height: 1.8rem;
 
-  font-weight: bold; 
+  font-weight: bold;
   /* font-weight: 400; */
-  /* font-weight: normal; */ 
+  /* font-weight: normal; */
   /* font-weight: 500; */
 
   letter-spacing: 1.5px;
 
- color: inherit;
+  color: inherit;
 
- height: inherit;
+  height: inherit;
 
-  @media(max-width:342px) {
+  @media (max-width: 342px) {
     display: none;
-  };
-
+  }
 `;

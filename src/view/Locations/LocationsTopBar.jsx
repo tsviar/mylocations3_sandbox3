@@ -3,25 +3,23 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import styled, { keyframes } from "styled-components";
 
-import main_palete_theme from '../../style.lib/PalleteStyles';
+import main_palete_theme from "../../style.lib/PalleteStyles";
 
 // import { makeStyles, styled , keyframes} from '@material-ui/core/styles';
-import { palette, spacing } from '@material-ui/system';
+import { palette, spacing } from "@material-ui/system";
 //import NoSsr from '@material-ui/core/NoSsr';
-//import marker from '@ajar/marker'; 
-
+//import marker from '@ajar/marker';
 
 // the children is the <Menu /> in App.js inside the  <TopBar> </TopBar>
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// DO NOT ENVELOPE WITH A  <router></router> 
-// THAT WILL OPEN A NEW ROUTER AND ALL 
+// DO NOT ENVELOPE WITH A  <router></router>
+// THAT WILL OPEN A NEW ROUTER AND ALL
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const LocationsTopBar = ({ children }) => (
   <Box>
     <Text>{children}</Text>
     <Logo src="/icons/logo.svg" alt="logo" />
   </Box>
-
 );
 
 export default LocationsTopBar;
@@ -29,7 +27,6 @@ export default LocationsTopBar;
 //================================================
 //  Styling
 //================================================
-
 
 const Box = styled.div`
   /* ${palette}*/
@@ -40,8 +37,8 @@ const Box = styled.div`
 
   /* width: 100%; */
   /* height: 100%;  */
-  /* height: 50px; */
-  height: inherit;
+  height: 50px;
+  /* height: inherit; */
   /* 70px; */
 
   /* width: 70rem; */
@@ -58,7 +55,6 @@ const Box = styled.div`
   
 `;
 
-
 const Text = styled.h1`
   cursor: pointer;
   user-select: none;
@@ -68,7 +64,7 @@ const Text = styled.h1`
   /* font-size: 3rem;
   line-height: 4rem; */
   font-size: 1.5rem;
-  line-height:1.8rem; 
+  line-height: 1.8rem;
 `;
 
 const spin = keyframes`
@@ -93,8 +89,6 @@ const Logo = styled.img`
     display: none;
   };
 `;
-
-
 
 //https://material-ui.com/system/basics/
 
