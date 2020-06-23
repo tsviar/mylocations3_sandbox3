@@ -1,36 +1,34 @@
 import React, { useMemo } from 'react';
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	Redirect
-} from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
 //customize
 // import styled from "styled-components";
 //import "./styles.css";
-import GlobalStyles from '../style.lib/globalStyles';
+import GlobalStyles from "../style.lib/globalStyles";
 // customize with material-ui
 import main_palete_theme from '../style.lib/PalleteStyles';
+
 
 // Material-UI
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { makeStyles, styled } from '@material-ui/core/styles';
 import marker from '@ajar/marker';
 
-import { WrapperDataManager } from '../stateProvider/DataManager';
-import HomePage from './HomePage';
+import { WrapperDataManager } from "../stateProvider/DataManager";
+import HomePage from "./HomePage";
 
-import CategoriesBrowser from './Categories/CategoriesBrowser';
+import CategoriesBrowser from "./Categories/CategoriesBrowser";
 
-import LocationsBrowser from './Locations/LocationsBrowser';
+import LocationsBrowser from "./Locations/LocationsBrowser";
+
 
 // since Links is exported as default,
 // we can name it as we wish' hence, Menu
 // import Menu from "./MainMenu";
 // import TopBar from "./TopBar";
-import MainBottomBar from './MainBottomBar';
+import MainBottomBar from "./MainBottomBar";
+
 
 // let theme = createMuiTheme({
 //   palette: {
@@ -40,31 +38,40 @@ import MainBottomBar from './MainBottomBar';
 //   }
 // });
 
+
+
 const history = createBrowserHistory();
 
+
 const App = () => {
-	// According to:
-	// https://material-ui.com/customization/palette/#example
 
-	const MainTheme = useMemo(() => createMuiTheme(main_palete_theme), []);
 
-	// According to:
-	// https://material-ui.com/customization/palette/#example
-	// const MainTheme = useMemo(
-	//   () => createMuiTheme({
-	//     palette:  main_palete_theme.palette,
-	//     overrides: main_palete_theme.overrides,
+  // According to:
+  // https://material-ui.com/customization/palette/#example
 
-	//     }) ,
-	//     [],
-	//   );
+  const MainTheme = useMemo(
+    () => createMuiTheme(
+      main_palete_theme),
+    [],
+  );
 
-	// const MainTheme = useMemo(
-	// this creates a new empty object, great interview Q
-	//   () => createMuiTheme({main_palete_theme}) ,
-	//     [],
-	//   );
-	/*
+  // According to:
+  // https://material-ui.com/customization/palette/#example
+  // const MainTheme = useMemo(
+  //   () => createMuiTheme({
+  //     palette:  main_palete_theme.palette,
+  //     overrides: main_palete_theme.overrides,  
+
+  //     }) ,
+  //     [],
+  //   );
+
+  // const MainTheme = useMemo(
+  // this creates a new empty object, great interview Q
+  //   () => createMuiTheme({main_palete_theme}) ,
+  //     [],
+  //   );
+  /*
   const [color, setColor] = React.useState('default');
 
   const blue_theme = React.useMemo(() => {
@@ -82,86 +89,85 @@ const App = () => {
 }, [color]);
 */
 
-	// const table_theme = createMuiTheme({
+  // const table_theme = createMuiTheme({
 
-	//  direction: direction,
-	//   palette: {
-	//    type: 'light',
-	//   },
-	//   overrides: {
-	//     MuiTooltip: {
-	//       tooltip: {
-	//         fontSize: 30,
-	//         color: '#18ffff',
-	//         backgroundColor: '#2962ff',
-	//         margin: "150px",
-	//       },
-	//      },
-	//   }
-	// });
+  //  direction: direction,
+  //   palette: {    
+  //    type: 'light',
+  //   },
+  //   overrides: {
+  //     MuiTooltip: {
+  //       tooltip: {
+  //         fontSize: 30,
+  //         color: '#18ffff',
+  //         backgroundColor: '#2962ff',
+  //         margin: "150px",
+  //       },
+  //      },
+  //   }
+  // });
 
-	//   console.log (`COLORRRRRRRRRRRR
-	// ============================================================================`,main_palete_theme);
 
-	return (
-		<Router history={history}>
-			<MuiThemeProvider theme={MainTheme}>
-				<AppBox
-					aria-label="App Div"
-					id="App_Div"
-					name="App_Div"
-					//role="article"
-					role="navigation"
-				>
-					{/* <TopBar>
+  //   console.log (`COLORRRRRRRRRRRR 
+  // ============================================================================`,main_palete_theme);
+
+
+
+  return (
+
+    <Router history={history}>
+      <MuiThemeProvider theme={MainTheme}>
+
+        <AppBox
+          aria-label="App Div"
+          id="App_Div"
+          name="App_Div"
+          //role="article"
+          role="navigation"
+        >
+          {/* <TopBar>
             <Menu />
           </TopBar> */}
 
-					<Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={HomePage} />
 
-					<WrapperDataManager>
-						<Switch>
-							{/* <Route path="/locations" component={ProfilesBrowser} /> */}
+          <WrapperDataManager>
 
-							{/* <Route exact path="/categories" children={< AddLocation />} /> */}
-							<Route
-								exact
-								path="/categories"
-								children={<CategoriesBrowser />}
-							/>
+            <Switch>
 
-							<Route exact path="/locations" children={<LocationsBrowser />} />
-							{/* component={LocationsBrowser} /> */}
+              {/* <Route path="/locations" component={ProfilesBrowser} /> */}
 
-							<Route
-								exact
-								path="/locations/view"
-								children={() => <LocationsBrowser />}
-							/>
-							<Route
-								exact
-								path="/locations/add"
-								children={() => <LocationsBrowser />}
-							/>
-							<Route
-								exact
-								path="/locations/edit"
-								children={() => <LocationsBrowser />}
-							/>
-							<Route
-								path="/locations/remove"
-								children={() => <LocationsBrowser />}
-							/>
-							{/* <Route path="/locations" children={<AddLocation />} /> */}
-						</Switch>
-					</WrapperDataManager>
+              {/* <Route exact path="/categories" children={< AddLocation />} /> */}
+              <Route exact path="/categories" children={< CategoriesBrowser />} />
 
-					<MainBottomBar />
-				</AppBox>
-				<GlobalStyles />
-			</MuiThemeProvider>
-		</Router>
-	);
+
+
+              <Route exact path="/locations" children={<LocationsBrowser />} />
+              {/* component={LocationsBrowser} /> */}
+
+              <Route exact path="/locations/view"
+                children={() => <LocationsBrowser />} />
+              <Route exact path="/locations/add"
+                children={() => <LocationsBrowser />} />
+              <Route exact path="/locations/edit"
+                children={() => <LocationsBrowser />} />
+              <Route path="/locations/remove"
+                children={() => <LocationsBrowser />} />
+              {/* <Route path="/locations" children={<AddLocation />} /> */}
+
+
+            </Switch>
+
+
+          </WrapperDataManager>
+
+          <MainBottomBar />
+
+        </AppBox>
+        <GlobalStyles />
+      </MuiThemeProvider>
+    </Router>
+  );
 };
 
 export default App;
@@ -183,44 +189,49 @@ export default App;
 
 */
 const AppBox = styled('div')({
-	// height: 'fit-content(100%)',
-	/*
+  // height: 'fit-content(100%)',
+  /*
   height: '100%',
   maxHeight: '80vh',
   minHeight: '30rem',
 */
 
-	// height: '100%',
-	// minHeight: '100rem',
-	// width: '100%',
-	// //minWidth: '90vw',
-	// minWidth: '100vw',
 
-	height: '100%',
-	minHeight: '100rem',
-	width: '100%',
-	//minWidth: '90vw',
-	minWidth: '100vw',
-	//minWidth: '25rem',
+  // height: '100%',
+  // minHeight: '100rem',
+  // width: '100%',
+  // //minWidth: '90vw',
+  // minWidth: '100vw',
 
-	//maxWidth: '100%',
-	// maxWidth: '35rem',
 
-	/*height: 'auto', /*if more info comes on the page, it will stretch down*/
+  height: '100%',
+  minHeight: '100rem',
+  width: '100%',
+  //minWidth: '90vw',
+  minWidth: '100vw',
+  //minWidth: '25rem',
 
-	display: 'flex',
-	flexDirection: 'column',
-	justifyContent: 'center',
-	alignItems: 'center',
 
-	//margin: 'auto',
-	margin: 0,
-	//padding: 'auto',
-	padding: 0
+  //maxWidth: '100%',
+  // maxWidth: '35rem',
 
-	//top right bottom left
-	// padding: '2rem 0rem 3rem 5rem',
-	//padding: '3rem 7.5rem',
-	//padding: '2rem 10rem 5rem 10rem',
-	//padding: '10.5rem 1.5rem 1.5rem',
+  /*height: 'auto', /*if more info comes on the page, it will stretch down*/
+
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  //margin: 'auto',
+  margin: 0,
+  //padding: 'auto',
+  padding: 0,
+
+  //top right bottom left
+  // padding: '2rem 0rem 3rem 5rem',
+  //padding: '3rem 7.5rem',
+  //padding: '2rem 10rem 5rem 10rem', 
+  //padding: '10.5rem 1.5rem 1.5rem',
+
+
 });
