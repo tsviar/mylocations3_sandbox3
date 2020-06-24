@@ -16,9 +16,28 @@ import { palette, spacing } from "@material-ui/system";
 // THAT WILL OPEN A NEW ROUTER AND ALL
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const LocationsTopBar = ({ children }) => (
-  <Box>
-    <Text>{children}</Text>
-    <Logo src="/icons/logo.svg" alt="logo" />
+  <Box
+    aria-label="Locations Top Bar"
+    id="Locations_Top_Bar"
+    name="Locations_Top_Bar"
+    role="menubar"
+  >
+    <Text
+      aria-label="Locations TopBar item"
+      id="Locations_TopBar_item"
+      name="Locations_TopBar_item"
+      role="menuitem"
+    >
+      {children}
+    </Text>
+    <Logo
+      aria-label="Locations TopBar logo"
+      id="Locations_TopBar_logo"
+      name="Locations_TopBar_logo"
+      role="img"
+      src="/icons/logo.svg"
+      alt="logo"
+    />
   </Box>
 );
 

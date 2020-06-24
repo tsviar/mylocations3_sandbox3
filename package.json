@@ -1,7 +1,7 @@
 {
   "name": "mylocations333-sandbox",
   "version": "1.0.2",
-  "description": "n application for managing favorite locations  and categories, using GoogleMaps, local storage, context managers, React hooks and router and ",
+  "description": "An application for managing favorite locations  and categories, using GoogleMaps, local storage, context managers, React hooks, React router, material-ui, Flexbox, CSS-Grid, Lazy-loading and more.\nWeb site created using create-react-app",
   "main": "src/index.js",
   "homepage": "/",
   "author": "Tsvia-Hellen Rubin",
@@ -44,12 +44,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not ie <= 11",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

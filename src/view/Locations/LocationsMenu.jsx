@@ -33,8 +33,18 @@ import {
 
 const LocationsMenu = () => {
   return (
-    <Nav>
-      <NavLi>
+    <Nav
+      aria-label="Locations Menu"
+      id="Locations_Menu"
+      name="Locations_Menu"
+      role="menu"
+    >
+      <NavLi
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations">
           <IconDiv>
             <Info style={MenuIconStyle} />
@@ -42,7 +52,12 @@ const LocationsMenu = () => {
           <TextDiv>View</TextDiv>
         </StyledLink>
       </NavLi>
-      <NavLi>
+      <NavLi
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations/add">
           <IconDiv>
             <AddLocationSharp style={MenuIconStyle} />
@@ -50,7 +65,12 @@ const LocationsMenu = () => {
           <TextDiv>Add</TextDiv>
         </StyledLink>
       </NavLi>
-      <NavLi>
+      <NavLi
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations/edit">
           <IconDiv>
             <Edit style={MenuIconStyle} />
@@ -58,7 +78,12 @@ const LocationsMenu = () => {
           <TextDiv>Edit</TextDiv>
         </StyledLink>
       </NavLi>
-      <NavLi>
+      <NavLi
+        aria-label="Locations Menu Link"
+        id="Locations_Menu_Link"
+        name="Locations_Menu_Link"
+        role="link"
+      >
         <StyledLink to="/locations/remove">
           <IconDiv>
             <DeleteOutline style={MenuIconStyle} />
@@ -103,9 +128,9 @@ const Nav = styled.ul`
   /* font-family: "Yanone Kaffeesatz"; */
   /* font-family: "Expletus Sans"; */
 
-  /* height: inherit; */
+  height: inherit;
   height: 50px;
-  width: inherit;
+  /* width: inherit; */
 
   margin: auto;
   padding: 0.5rem;
