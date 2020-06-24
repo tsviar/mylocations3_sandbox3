@@ -62,6 +62,7 @@ const Box = styled.div`
 
   /* width: 70rem; */
   width: inherit;
+  min-width: inherit; 
 
   padding: 20px;
  

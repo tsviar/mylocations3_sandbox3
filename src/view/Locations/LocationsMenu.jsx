@@ -130,7 +130,7 @@ const Nav = styled.ul`
 
   height: inherit;
   height: 50px;
-  /* width: inherit; */
+
 
   margin: auto;
   padding: 0.5rem;
@@ -146,6 +146,10 @@ const Nav = styled.ul`
     /* width: 18rem; */
     /* width: 15rem; */
   
+     width: inherit; 
+     min-width: inherit; 
+
+
   @media all and (min-width:360px) {   
     minWidth: 100%;
 
